@@ -93,4 +93,4 @@ This project is open source and available under the [MIT License](LICENSE).
 
 Feel free to use this template for your personal portfolio. If you use it, I'd appreciate a credit link back to this repository.
 
-Created with ❤️ by [Your Name]
+Created with ❤️ by Kshitij Gawankar
