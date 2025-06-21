@@ -2,7 +2,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     // Initialize EmailJS
     (function() {
-        emailjs.init("YOUR_USER_ID"); // Replace with your EmailJS user ID
+        emailjs.init("YOUR_PUBLIC_KEY"); // Replace with your actual Public Key from EmailJS
     })();
     
     // Theme Toggle
