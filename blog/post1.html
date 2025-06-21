@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Modern JavaScript Features Every Developer Should Know">
+    <meta name="keywords" content="javascript, development, coding, web development">
+    <meta name="author" content="Your Name">
+    <title>Modern JavaScript Features Every Developer Should Know | Your Name</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/blog.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="icon" type="image/png" href="../assets/icons/favicon.png">
+</head>
+<body class="light-theme">
+    <div class="theme-toggle">
+        <input type="checkbox" id="theme-switch">
+        <label for="theme-switch" class="switch-label">
+            <i class="fas fa-sun"></i>
+            <i class="fas fa-moon"></i>
+            <div class="toggle-circle"></div>
+        </label>
+    </div>
+
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <header>
+        <div class="logo">
+            <a href="../index.html">
+                <span class="logo-text">YN</span>
+            </a>
+        </div>
+        <nav>
+            <div class="nav-toggle">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../index.html#home" class="nav-link">Home</a></li>
+                <li><a href="../index.html#about" class="nav-link">About</a></li>
+                <li><a href="../index.html#skills" class="nav-link">Skills</a></li>
+                <li><a href="../index.html#projects" class="nav-link">Projects</a></li>
+                <li><a href="../index.html#resume" class="nav-link">Resume</a></li>
+                <li><a href="../index.html#blog" class="nav-link active">Blog</a></li>
+                <li><a href="../index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="blog-post-container">
+        <article class="blog-post">
+            <div class="blog-post-header">
+                <h1>Modern JavaScript Features Every Developer Should Know</h1>
+                <div class="blog-post-meta">
+                    <span class="blog-post-date">June 15, 2025</span>
+                    <span class="blog-post-category">Development</span>
+                </div>
+                <div class="blog-post-image">
+                    <img src="../assets/images/blog1.jpg" alt="Modern JavaScript Features">
+                </div>
+            </div>
+            
+            <div class="blog-post-content">
+                <p>JavaScript has evolved significantly over the years, with new features and improvements being added regularly. In this post, we'll explore some of the most useful modern JavaScript features that can help you write cleaner, more efficient code.</p>
+                
+                <h2>1. Arrow Functions</h2>
+                <p>Arrow functions provide a more concise syntax for writing function expressions. They also don't have their own <code>this</code> binding, making them particularly useful for callbacks and methods that need to access the parent scope.</p>
+                
+                <pre><code class="language-javascript">// Traditional function
+function add(a, b) {
+    return a + b;
+}
+
+// Arrow function
+const add = (a, b) => a + b;
+
+// With implicit return
+const square = x => x * x;
+
+// Multiline arrow function
+const calculate = (x, y) => {
+    const sum = x + y;
+    const product = x * y;
+    return { sum, product };
+};</code></pre>
+                
+                <h2>2. Destructuring Assignment</h2>
+                <p>Destructuring allows you to extract values from arrays or properties from objects into distinct variables, making your code cleaner and more readable.</p>
+                
+                <pre><code class="language-javascript">// Object destructuring
+const person = {
+    name: 'John',
+    age: 30,
+    location: {
+        city: 'New York',
+        country: 'USA'
+    }
+};
+
+const { name, age, location: { city } } = person;
+console.log(name, age, city); // John 30 New York
+
+// Array destructuring
+const colors = ['red', 'green', 'blue'];
+const [firstColor, secondColor] = colors;
+console.log(firstColor, secondColor); // red green
+
+// Function parameter destructuring
+function displayPerson({ name, age }) {
+    console.log(`${name} is ${age} years old`);
+}</code></pre>
+                
+                <h2>3. Spread and Rest Operators</h2>
+                <p>The spread operator (<code>...</code>) allows an iterable to be expanded in places where zero or more arguments or elements are expected. The rest parameter syntax allows us to represent an indefinite number of arguments as an array.</p>
+                
+                <pre><code class="language-javascript">// Spread operator with arrays
+const arr1 = [1, 2, 3];
+const arr2 = [...arr1, 4, 5]; // [1, 2, 3, 4, 5]
+
+// Spread operator with objects
+const obj1 = { a: 1, b: 2 };
+const obj2 = { ...obj1, c: 3 }; // { a: 1, b: 2, c: 3 }
+
+// Rest parameter in functions
+function sum(...numbers) {
+    return numbers.reduce((total, num) => total + num, 0);
+}
+
+console.log(sum(1, 2, 3, 4)); // 10</code></pre>
+                
+                <h2>4. Template Literals</h2>
+                <p>Template literals provide an easy way to create multiline strings and to interpolate variables and expressions into strings.</p>
+                
+                <pre><code class="language-javascript">const name = 'Alice';
+const greeting = `Hello, ${name}!
+Welcome to our website.`;
+
+console.log(greeting);
+// Hello, Alice!
+// Welcome to our website.</code></pre>
+                
+                <h2>5. Optional Chaining</h2>
+                <p>The optional chaining operator (<code>?.</code>) enables you to read the value of a property located deep within a chain of connected objects without having to check if each reference in the chain is valid.</p>
+                
+                <pre><code class="language-javascript">const user = {
+    name: 'John',
+    address: {
+        street: '123 Main St'
+    }
+};
+
+// Without optional chaining
+const zipCode = user.address && user.address.zipCode ? user.address.zipCode : undefined;
+
+// With optional chaining
+const zipCode = user.address?.zipCode;
+
+// Can also be used with function calls
+const result = someFunction?.();</code></pre>
+                
+                <h2>Conclusion</h2>
+                <p>These modern JavaScript features can significantly improve your code quality and developer experience. By leveraging these tools, you can write more concise, readable, and maintainable code. Stay tuned for more articles on JavaScript best practices and advanced techniques!</p>
+            </div>
+            
+            <div class="blog-post-footer">
+                <div class="blog-post-tags">
+                    <span class="tag">JavaScript</span>
+                    <span class="tag">ES6</span>
+                    <span class="tag">Web Development</span>
+                </div>
+                <div class="blog-post-share">
+                    <span>Share:</span>
+                    <a href="#" class="share-icon"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="share-icon"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="share-icon"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </article>
+        
+        <div class="blog-navigation">
+            <a href="#" class="blog-nav-link prev-post">
+                <i class="fas fa-arrow-left"></i>
+                <span>Previous Post</span>
+            </a>
+            <a href="index.html" class="blog-nav-link all-posts">
+                <i class="fas fa-th-large"></i>
+                <span>All Posts</span>
+            </a>
+            <a href="post2.html" class="blog-nav-link next-post">
+                <span>Next Post</span>
+                <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <span class="logo-text">YN</span>
+            </div>
+            <div class="footer-text">
+                <p>&copy; 2025 Your Name. All rights reserved.</p>
+            </div>
+            <div class="footer-links">
+                <a href="../index.html#home">Home</a>
+                <a href="../index.html#about">About</a>
+                <a href="../index.html#projects">Projects</a>
+                <a href="../index.html#contact">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+    <div class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <script src="../js/main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+</body>
+</html>
